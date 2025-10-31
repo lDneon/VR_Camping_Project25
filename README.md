@@ -6,8 +6,7 @@ Immersive camping survival game. The player can cook and defend themselves, avoi
 - **Combat System & Bear Behavior-**  player weapons deal damage using IDamageable(physics based melee). Using field view(already a VR hardware based-optic) + raycasting(used to detect colission) so that the bear can detect the player. WHen that happen, the bear can chase and attack the player. If the bear dies in the proccess then it drops meat for the player to collect.
 - **Health System-** player HP, healing with First Aid medicine bottle
 - **Evironmental Simulation-** fire drains fuel over time; logs restore it
-  ---
-
+  
 ### Dynamics
 - **Resource Manangement-** fuel must be managed punctuated by sudden bear attacks
 - **Risk Vs Reward-** approaching the fire to cook food exposes the player to potential danger
