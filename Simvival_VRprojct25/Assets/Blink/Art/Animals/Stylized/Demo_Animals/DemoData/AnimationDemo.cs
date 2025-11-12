@@ -91,6 +91,6 @@ namespace BLINK
                     animator.SetTrigger(entries[entryIndex].animationName);
                 }
             }
-        }
+        }                                  
     }
 }
