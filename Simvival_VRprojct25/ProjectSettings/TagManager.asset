@@ -19,6 +19,7 @@ TagManager:
   - bear_health
   - player_health
   - campfire
+  - Rawmeat
   layers:
   - Default
   - TransparentFX
