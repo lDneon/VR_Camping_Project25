@@ -1,0 +1,26 @@
+
+DEVTRICKED is dedicated to bring low price assets to indie developers!
+
+LOW-POLY FOREST SURVIVAL STARTER PACK LITE 
+
+October 2025 Version 1.1 update:
+- Added a hatchet tool prop
+- Optimized all models reducing the poly count
+
+
+Pack Props:
+- Campfire
+- Pickaxe
+- Hatchet
+- Torch
+
+Unique Models: 4
+
+Textures: 1 BaseColor (Albedo) Texture shared between all models
+
+Pivot:
+Be sure to have the top left box in the viewport set to PIVOT not Center.
+This will ensure the Prop rotates from the correct Pivot point!
+
+Thank you for downloading the Low-Poly Forest Survival Starter Pack Lite! The Assets can be dragged and dropped from the prefabs folder. The Campfire, Pickaxe, and Torch share one material (ForestSurvival_Mat).
+Any questions or suggestions for future packs for future packs contact me at devtricked@gmail.com

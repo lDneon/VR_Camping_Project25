@@ -3,7 +3,12 @@ guid: 36b657c2f90736541817965ec7a74481
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shalash_Branches_Mat
+    second: {fileID: 2100000, guid: 1547805948c528a48869d2df48995671, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
