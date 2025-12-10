@@ -2,17 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bear_health : MonoBehaviour
+public class BearHealth : MonoBehaviour
+
 {
-    // Start is called before the first frame update
+    public int maxHealth = 100;
+    public int currentHealth;
+    public GameObject meatDrop;    // assign raw meat prefab
+    public Animator bearAnimator;  // assign animator
+
     void Start()
+
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int amount)
+
     {
-        
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+
+            Die();
     }
+
+    void Die()
+    {
+
+        bearAnimator.SetTrigger("Death");
+        Invoke(nameof(DisableBear), 2f); // waits for animation
+
+    }
+
+    void DisableBear()
+    {
+        gameObject.SetActive(false);
+        meatDrop.SetActive(true); // drop the meat prefab
+    }
+
 }
+
+

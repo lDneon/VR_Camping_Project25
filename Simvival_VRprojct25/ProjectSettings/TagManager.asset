@@ -20,6 +20,9 @@ TagManager:
   - player_health
   - campfire
   - Rawmeat
+  - Bear_Mesh
+  - BhealthBar
+  - BearSpray
   layers:
   - Default
   - TransparentFX
@@ -52,7 +55,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - OVROverlayCanvas Rendering
   m_SortingLayers:
   - name: Default
     uniqueID: 0
