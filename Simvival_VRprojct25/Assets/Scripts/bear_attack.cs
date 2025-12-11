@@ -3,15 +3,13 @@ using UnityEngine.AI;
 
 public class bear_attack : MonoBehaviour
 {
-    [Header("Bear AI Settings")]
-    public float detectionRadius = 10f;
+    public float detectionRadius = 20f;
     public float attackDistance = 2f;
     public int attackDamage = 35;
     public float attackCooldown = 2f;
 
     private float attackTimer = 0f;
 
-    [Header("References")]
     public Transform player;
     public BearHealth health;
     public Animator animator;
@@ -21,28 +19,30 @@ public class bear_attack : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogError("XRPlayer not assigned! Please drag the XRPlayer into the 'player' field.");
-            enabled = false;
-            return;
+            player = GameObject.FindWithTag("XRPlayer")?.transform;
+            if (player == null)
+            {
+                Debug.LogError("❌ XRPlayer not found!");
+                enabled = false;
+                return;
+            }
         }
 
         agent = GetComponent<NavMeshAgent>();
-        Debug.Log(" Player reference successfully assigned.");
     }
 
     void Update()
     {
-        if (health.currentHealth <= 0) return;   // Bear dead
+        if (health.currentHealth <= 0) return;
 
         attackTimer -= Time.deltaTime;
 
         float dist = Vector3.Distance(transform.position, player.position);
 
-        Debug.Log(dist);
-        // Player too far away stop moving
         if (dist > detectionRadius)
         {
             animator.SetBool("Run Forward", false);
+            agent.isStopped = true;
             agent.ResetPath();
             return;
         }
@@ -52,40 +52,28 @@ public class bear_attack : MonoBehaviour
 
     void ChasePlayer(float dist)
     {
-        
         if (dist > attackDistance)
         {
-            // Clear attack triggers so Animator exits attack state
-            animator.ResetTrigger("Attack1");
-            animator.ResetTrigger("Attack2");
-
-            // Running animation
             animator.SetBool("Run Forward", true);
 
-            // Move toward player
             agent.isStopped = false;
             agent.SetDestination(player.position);
 
-            // Smooth horizontal rotation toward player
-            Vector3 direction = player.position - transform.position;
-            direction.y = 0f;
-            if (direction != Vector3.zero)
-            {
-                Quaternion targetRot = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
-            }
+            Vector3 look = player.position - transform.position;
+            look.y = 0;
+            if (look != Vector3.zero)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(look), Time.deltaTime * 5);
 
-            return; // prevents attack logic from running
+            return;
         }
 
-        
         agent.isStopped = true;
-        AttackPlayer();
 
-        // Keep facing player but stay upright
-        Vector3 look = player.position;
-        look.y = transform.position.y;
-        transform.LookAt(look);
+        Vector3 lp = player.position;
+        lp.y = transform.position.y;
+        transform.LookAt(lp);
+
+        AttackPlayer();
     }
 
     void AttackPlayer()
@@ -94,11 +82,9 @@ public class bear_attack : MonoBehaviour
 
         if (attackTimer <= 0f)
         {
-            // Random attack animation
-            string attackAnim = Random.value > 0.5f ? "Attack1" : "Attack2";
-            animator.SetTrigger(attackAnim);
+            string atk = Random.value > 0.5f ? "Attack1" : "Attack2";
+            animator.SetTrigger(atk);
 
-            // Apply damage
             player.GetComponent<Player_H>().TakeDamage(attackDamage);
 
             attackTimer = attackCooldown;

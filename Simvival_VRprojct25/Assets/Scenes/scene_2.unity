@@ -10582,7 +10582,6 @@ GameObject:
   m_Component:
   - component: {fileID: 208793887}
   - component: {fileID: 208793886}
-  - component: {fileID: 208793885}
   - component: {fileID: 208793884}
   - component: {fileID: 208793888}
   - component: {fileID: 208793889}
@@ -10726,28 +10725,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &208793885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208793882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
-  _addNewPointsToFront: 0
-  _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
-  _targetTransform: {fileID: 0}
-  _maxGrabPoints: 1
-  _rigidbody: {fileID: 208793886}
-  _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
 --- !u!54 &208793886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11193,7 +11170,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.23333333
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 4b99aa7154eebdc448f17d7c4b5254cd, type: 2}
   m_BuildHeightMesh: 0
@@ -11597,28 +11574,33 @@ Transform:
   - {fileID: 639145883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478752588
-MonoBehaviour:
+--- !u!54 &478752588
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478752586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
-  _addNewPointsToFront: 0
-  _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
-  _targetTransform: {fileID: 0}
-  _maxGrabPoints: 1
-  _rigidbody: {fileID: 0}
-  _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &480224365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9191406436504902047, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
@@ -12497,7 +12479,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 478752588}
+  _pointableElement: {fileID: 0}
   _rigidbody: {fileID: 226262904}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 1
@@ -15642,6 +15624,10 @@ PrefabInstance:
       value: raw_meat
       objectReference: {fileID: 0}
     - target: {fileID: 9119513212501301151, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119513212501301151, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
       propertyPath: m_TagString
       value: Rawmeat
       objectReference: {fileID: 0}
@@ -15654,10 +15640,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9119513212501301151, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1347621798}
+      addedObject: {fileID: 1347621799}
     - targetCorrespondingSourceObject: {fileID: 9119513212501301151, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1347621799}
+      addedObject: {fileID: 1347621800}
   m_SourcePrefab: {fileID: 100100000, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
 --- !u!4 &1347621796 stripped
 Transform:
@@ -15669,28 +15655,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9119513212501301151, guid: e3165a5143c74614698ee0ee58621a09, type: 3}
   m_PrefabInstance: {fileID: 1347621795}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1347621798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347621797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
-  _addNewPointsToFront: 0
-  _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
-  _targetTransform: {fileID: 0}
-  _maxGrabPoints: 1
-  _rigidbody: {fileID: 226262904}
-  _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
 --- !u!114 &1347621799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15705,6 +15669,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raw_meat: {fileID: 0}
   cooked_meat: {fileID: 0}
+--- !u!54 &1347621800
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347621797}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1368495584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 521555726832732642, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
@@ -24712,7 +24703,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 20
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 275
@@ -24731,19 +24722,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942337905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 447570dbe0012f64c96584c2dbf17b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 10
-  attackDistance: 2
+  attackDistance: 5
   attackDamage: 35
   attackCooldown: 2
-  player: {fileID: 0}
-  health: {fileID: 0}
-  animator: {fileID: 0}
-  agent: {fileID: 0}
+  player: {fileID: 460444556}
+  health: {fileID: 1942337912}
+  animator: {fileID: 1942337915}
+  agent: {fileID: 1942337907}
 --- !u!114 &1942337910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24834,6 +24825,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1942337915 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3734775969355451150, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
+  m_PrefabInstance: {fileID: 1942337904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966521414
 GameObject:
   m_ObjectHideFlags: 0
@@ -25676,7 +25672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 521555726832732642, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Respawn
       objectReference: {fileID: 0}
     - target: {fileID: 521555726832732652, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
       propertyPath: m_RootOrder
@@ -25721,6 +25717,10 @@ PrefabInstance:
     - target: {fileID: 521555726832732652, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 521555727181035329, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 521555727555064242, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
       propertyPath: m_CullingMask.m_Bits
