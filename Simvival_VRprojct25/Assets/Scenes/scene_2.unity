@@ -10854,6 +10854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00eb4e364e63af46b1a48a643e5645b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprayDamage: 10
 --- !u!54 &226262904 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2520786367037677579, guid: 5c149baf016750b42ac7e9cdbc905b96, type: 3}
@@ -11615,7 +11616,7 @@ MonoBehaviour:
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: 1
-  _rigidbody: {fileID: 208793886}
+  _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
 --- !u!4 &480224365 stripped
@@ -14214,8 +14215,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 208793885}
-  _rigidbody: {fileID: 208793886}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 0}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -15414,8 +15415,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 208793885}
-  _rigidbody: {fileID: 208793886}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 0}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -15702,6 +15703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5be47ad91b28f44182d1ff48c2d1814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raw_meat: {fileID: 0}
+  cooked_meat: {fileID: 0}
 --- !u!1 &1368495584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 521555726832732642, guid: f9f107e8ecae49048bda9d4fd7e1d1ec, type: 3}
@@ -17116,6 +17119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f88589e1e0ab7141afaa041c10fb68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  campSpawnPoint: {fileID: 0}
 --- !u!114 &1854556192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24730,6 +24736,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447570dbe0012f64c96584c2dbf17b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRadius: 10
+  attackDistance: 2
+  attackDamage: 35
+  attackCooldown: 2
+  player: {fileID: 0}
+  health: {fileID: 0}
+  animator: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!114 &1942337910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24795,6 +24809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f775f14e7e942429da9fd28d225844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  meatDrop: {fileID: 0}
+  bearAnimator: {fileID: 0}
 --- !u!65 &1942337914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24960,8 +24978,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 208793885}
-  _rigidbody: {fileID: 208793886}
+  _pointableElement: {fileID: 0}
+  _rigidbody: {fileID: 0}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 1
   _releaseDistance: 0

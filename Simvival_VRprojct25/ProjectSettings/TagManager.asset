@@ -23,6 +23,7 @@ TagManager:
   - Bear_Mesh
   - BhealthBar
   - BearSpray
+  - XRPlayer
   layers:
   - Default
   - TransparentFX
